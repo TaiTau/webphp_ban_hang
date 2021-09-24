@@ -828,7 +828,7 @@ a{
     margin: auto;
 }
 .col-2 img{
-    max-width: 100%;
+    max-width: 400px;
     float: right;
 }
 .col-2 h1{

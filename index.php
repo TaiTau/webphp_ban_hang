@@ -1,6 +1,7 @@
 <?php
 	include_once('db/connect.php');
 ?>
+
 <?php
 	$sql_category = mysqli_query($con,'SELECT * FROM tbl_category ORDER BY category_id DESC');
 

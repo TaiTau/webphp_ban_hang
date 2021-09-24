@@ -30,7 +30,7 @@
                         <div class = "product">
                             <div class = "product-content">
                                 <div class = "product-img">
-                                    <img src = "images/<?php echo $row_sanpham['sanpham_image'] ?>" alt = "product image">
+                                    <img src = "uploads/<?php echo $row_sanpham['sanpham_image'] ?>" alt = "product image">
                                 </div>
                                 <div class = "product-btns">
                                     <a href="?quanly=chitiet&id=<?php echo $row_sanpham['sanpham_id'] ?>">

@@ -97,7 +97,7 @@
                 <td><?php echo $i ?></td>
 				<td>
                     <div class="cart-info">
-                        <a href="single.html" class="at-in"><img src="images/<?php echo $row_fetch_giohang['hinhanh'] ?>" class="img-responsive" alt=""></a>
+                        <a href="single.html" class="at-in"><img src="uploads/<?php echo $row_fetch_giohang['hinhanh'] ?>" class="img-responsive" alt=""></a>
                     </div>
                 </td>
 				<td class="check">

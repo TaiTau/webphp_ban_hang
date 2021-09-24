@@ -19,7 +19,7 @@
     ?>
     <div class="row">
         <div class="col-2">
-            <img src="images/<?php echo $row_chitiet['sanpham_image'] ?>" data-imagezoom="true" alt="">
+            <img src="uploads/<?php echo $row_chitiet['sanpham_image'] ?>" data-imagezoom="true" alt="">
         </div>
         <div class="col-2">
             <p><?php echo $row_chitiet['sanpham_name'] ?></p>
@@ -33,7 +33,7 @@
                 <input type="submit" name="themgiohang" value="Thêm vào giỏ hàng" class="btn"></input>
             </form>
             <h3>Thông số kĩ thuật</h3>
-            <p>AMD Ryzen™ 5-4600H, 3.00GHz upto 4.00GHz, 8MB cache, 6 cores 12 threads, 8MB Cache</p>
+            <p><?php echo $row_chitiet['sanpham_mota'] ?></p>
         </div>
     </div>
     <?php

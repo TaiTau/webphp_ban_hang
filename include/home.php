@@ -1,4 +1,6 @@
-
+<?php
+    include('slider.php');
+?>
 <div class="home">
     <div class = "products">
         <div class = "containerhome">

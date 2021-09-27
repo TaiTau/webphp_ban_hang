@@ -31,7 +31,10 @@
                                 </div>
                             </li>
                             <li class="nav-link" style="--i: 1.35s">
-                                <a href="#">Liên hệ</a>
+                                <a href="?quanly=login">Đăng nhập</a>
+                            </li>
+                            <li class="nav-link" style="--i: 1.35s">
+                                <a href="#">Đăng ký</a>
                             </li>
                         </ul>
                     </div>
@@ -40,7 +43,6 @@
                         <a href="?quanly=giohang" class="btn solid">Giỏ hàng</a>
                     </div>
                 </div>
-
                 <div class="hamburger-menu-container">
                     <div class="hamburger-menu">
                         <div></div>

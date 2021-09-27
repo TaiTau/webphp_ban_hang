@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	include_once('db/connect.php');
 ?>
 
@@ -26,7 +27,7 @@
 <body>
     <?php
 		include('include/topbar.php');
-		include('include/slider.php');
+		// include('include/slider.php');
 		
 		if(isset($_GET['quanly'])){
 			$tam = $_GET['quanly'];
@@ -42,6 +43,9 @@
 		}
 		elseif($tam=='giohang'){
 			include('include/giohang.php');
+		}
+		elseif($tam=='login'){
+			include('include/login.php');
 		}
 		elseif($tam='home'){
 			include('include/home.php');

@@ -51,10 +51,11 @@
 		$name = $_POST['name'];
 		$phone = $_POST['phone'];
 		$email = $_POST['email'];
+		$password = md5($_POST['password']);
 		$note = $_POST['note'];
 		$address = $_POST['address'];
 		$giaohang = $_POST['giaohang'];
-		$sql_khachhang = mysqli_query($con,"INSERT INTO tbl_khachhang(name,phone,email,address,note,giaohang) values ('$name','$phone','$email','$address','$note','$giaohang')");
+		$sql_khachhang = mysqli_query($con,"INSERT INTO tbl_khachhang(name,phone,email,address,note,giaohang,password) values ('$name','$phone','$email','$address','$note','$giaohang','$password')");
 		if($sql_khachhang){
 			$sql_select_khachhang = mysqli_query($con,"SELECT * FROM tbl_khachhang ORDER BY khachhang_id DESC LIMIT 1");
 			$mahang =rand(0,9999);
@@ -126,6 +127,7 @@
 				<input type="text" name="phone" placeholder="Số phone">
 				<input type="text" name="address" placeholder="Địa chỉ">
 				<input type="text" name="email" placeholder="Email">
+				<input type="text" name="password" placeholder="password">
 				<textarea style="resize: none;" name="note" placeholder="Ghi chú"></textarea>
 				<select name="giaohang">
 					<option>Chọn hình thức giao hàng</option>

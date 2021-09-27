@@ -30,11 +30,20 @@
                                     </ul>
                                 </div>
                             </li>
+                            <?php
+                                if(isset($_GET['quanly']) && $_GET['quanly']== 'logout'){
+                                    Session ::destroy_user();
+                                }
+                            ?>
                             <li class="nav-link" style="--i: 1.35s">
-                                <a href="?quanly=login">Đăng nhập</a>
-                            </li>
-                            <li class="nav-link" style="--i: 1.35s">
-                                <a href="#">Đăng ký</a>
+                                <?php 
+                                    $check_login = Session::get('login');
+                                    if($check_login == true) {
+                                        echo '<a href="?quanly=logout">Đăng xuất</a>';
+                                    }else{
+                                        echo '<a href="?quanly=login">Đăng nhập</a>';
+                                    }
+                                ?>
                             </li>
                         </ul>
                     </div>

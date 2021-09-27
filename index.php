@@ -1,8 +1,9 @@
 <?php
 	session_start();
+	include_once('lib/session.php');
+	session::init();
 	include_once('db/connect.php');
 ?>
-
 <?php
 	$sql_category = mysqli_query($con,'SELECT * FROM tbl_category ORDER BY category_id DESC');
 
@@ -46,6 +47,9 @@
 		}
 		elseif($tam=='login'){
 			include('include/login.php');
+		}
+		elseif($tam=='signin'){
+			include('include/signin.php');
 		}
 		elseif($tam='home'){
 			include('include/home.php');

@@ -46,6 +46,10 @@ class Session{
   session_destroy();
   header("Location:../admin/login.php");
  }
+ public static function destroy_user(){
+   session_destroy();
+   header("Location:index.php?quanly=giohang&dangxuat=1");
+  }
 }
 ?>
 

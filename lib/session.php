@@ -26,26 +26,25 @@ class Session{
      return false;
     }
  }
-
  public static function checkSession(){
-    self::init();
-    if (self::get("adminlogin")== false) {
-     self::destroy();
-     header("Location:../admin/login.php");
-    }
- }
+   self::init();
+   if (self::get("adminlogin")== false) {
+    self::destroy();
+    header("Location:login.php");
+   }
+}
 
- public static function checkLogin(){
-    self::init();
-    if (self::get("adminlogin")== true) {
-     header("Location:../admin/indexadmin.php");
-    }
- }
+public static function checkLogin(){
+   self::init();
+   if (self::get("login")== true) {
+    header("Location:indexadmin.php");
+   }
+}
 
- public static function destroy(){
+public static function destroy(){
   session_destroy();
-  header("Location:../admin/login.php");
- }
+  header("Location:login.php");
+}
  public static function destroy_user(){
    session_destroy();
    header("Location:index.php?quanly=giohang&dangxuat=1");

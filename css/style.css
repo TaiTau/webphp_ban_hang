@@ -441,8 +441,10 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #B3EBFF;
-    
+    /* background-color: #B3EBFF; */
+    background: linear-gradient(rgba(88, 88, 88, 0.6),rgba(83, 83, 83, 0.6)),url(../images/bgr1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .slider{
     width: 1000px;
@@ -552,9 +554,7 @@ a{
     text-transform: capitalize;
 }
 .lg-title{
-    font-size: 2.5rem;
     font-weight: 500;
-    text-align: center;
     padding: 1.3rem 0;
     opacity: 0.9;
 }
@@ -577,7 +577,7 @@ a{
 
 /* product section */
 .products{
-    background: #B3EBFF;
+    background: #DBFEFF;
     padding: 3.2rem 0;
 }
 .products .text-light{
@@ -590,6 +590,7 @@ a{
     position: relative;
 }
 .product-content{
+    height: 300px;
     background: var(--gray);
     padding: 3rem 0.5rem 2rem 0.5rem;
     cursor: pointer;
@@ -636,6 +637,7 @@ a{
     color: #fff;
 }
 .product-info{
+    height: 150px;
     background: white;
     padding: 2rem;
 }
@@ -896,7 +898,7 @@ td{
     padding: 5px;
 }
 input[type="submit"] {
-    width: 200px;
+    width: 250px;
     height: 45px;
     background: #ff523b;
     cursor: pointer;
@@ -905,7 +907,7 @@ input[type="submit"] {
     border-radius: 15px;
 }
 input[type="submit"]:hover{
-    background: #563434;
+    background: #ff523b;
 }
 .thongtinkh {
     width: 85%;

@@ -31,5 +31,5 @@
                 <label for="radio4" class="manual-btn"></label>
             </div>
         </div>
-    </div>
-    <br>
+</div>
+<br>

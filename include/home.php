@@ -40,6 +40,15 @@
                 ?>
             </div>
         </div>
+
+        <div class = "containerhome">
+            <h1 class = "lg-title">Chuyên trang thương hiệu</h1>
+            <ul style="display: flex; justify-content: center;">
+                <li style="padding:20px;"><img src="images/thuonghieuss.png" alt=""></li>
+                <li style="padding:20px;"><img src="images/thuonghieuip.png" alt=""></li>
+                <li style="padding:20px;"><img src="images/thuonghieulnv.png" alt=""></li>
+            </ul>
+        </div>
     </div>       
 </div>
 <br>

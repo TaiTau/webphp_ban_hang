@@ -53,6 +53,11 @@ class order
         $result = $this ->db->select($squery);
         return $result;
     }
+    public function get_amount($cus_id){
+        $query = "SELECT tongtien FROM tbl_donhang WHERE khachhang_id = '$cus_id'";
+        $get_price = $this->db->select($query);
+        return $get_price;
+    }
     public function update_cus($sanpham_id,$khachhang_id,$soluong,$ngaythang,$id)
     {
         $sanpham_id= $this ->fm->validation($sanpham_id);

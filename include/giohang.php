@@ -73,7 +73,8 @@
 			for($i=0;$i<count($_POST['thanhtoan_product_id']);$i++){
 				$sanpham_id = $_POST['thanhtoan_product_id'][$i];
 				$soluong = $_POST['thanhtoan_soluong'][$i];
-				$sql_donhang = mysqli_query($con,"INSERT INTO tbl_donhang(sanpham_id,khachhang_id,soluong,mahang) values ('$sanpham_id','$khachhang_id','$soluong','$mahang')");
+				$tongtien = $_POST['tongtien'];
+				$sql_donhang = mysqli_query($con,"INSERT INTO tbl_donhang(sanpham_id,khachhang_id,soluong,mahang,tongtien) values ('$sanpham_id','$khachhang_id','$soluong','$mahang,'$tongtien')");
 				$sql_delete_thanhtoan = mysqli_query($con,"DELETE FROM tbl_giohang WHERE sanpham_id='$sanpham_id'");
 			}
 			
@@ -84,8 +85,9 @@
 			for($i=0;$i<count($_POST['thanhtoan_product_id']);$i++){
 				$sanpham_id = $_POST['thanhtoan_product_id'][$i];
 				$soluong = $_POST['thanhtoan_soluong'][$i];
-				$sql_donhang = mysqli_query($con,"INSERT INTO tbl_donhang(sanpham_id,khachhang_id,soluong,mahang) values ('$sanpham_id','$khachhang_id','$soluong','$mahang')");
-				$sql_delete_thanhtoan = mysqli_query($con,"DELETE FROM tbl_giohang WHERE sanpham_id='$sanpham_id'");
+				$tongtien = $_POST['tongtien'];
+				$sql_donhang = mysqli_query($con,"INSERT INTO tbl_donhang(sanpham_id,khachhang_id,soluong,mahang,tongtien) values ('$sanpham_id','$khachhang_id','$soluong','$mahang','$tongtien')");
+				// $sql_delete_thanhtoan = mysqli_query($con,"DELETE FROM tbl_giohang WHERE sanpham_id='$sanpham_id'");
 		}
 	}
 ?>
@@ -139,7 +141,8 @@
 				}
 			?>
             <tr>
-                <td style="text-align: center;" colspan="7">Tổng tiền : <?php echo number_format($total).'₫'?></td>
+			<input type="hidden" name="tongtien" value="<?php echo $total ?>">
+                <td style="text-align: center;" colspan="7">  Tổng tiền : <?php echo number_format($total).'₫'?></td>
             </tr>
             <tr>
                 <td style="text-align: center;" colspan="7"><input type="submit" value="Cập nhật giỏ hàng" name="capnhatsoluong">
@@ -156,11 +159,14 @@
 				<?php
 					}
 				?>
-
-				<input type="submit" value="Thanh toán" name="thanhtoandangnhap">
+				<input  value="Xác nhận đơn hàng" name="thanhtoandangnhap" type="submit">
+				<?php 
+					echo '<p class="kh"><a href="include/indexpm.php?khachhang_id='.$_SESSION['khachhang_id'].'">thanh toán</a></p>'
+				?>
 				<?php
 					}
 				?>
+				
 				</td>
             </tr>
         </table>

@@ -63,7 +63,7 @@
                         <tr>
                           <td>
                             <?php
-                            echo $i;
+                            echo $result['khachhang_id'];
                             ?>
                           </td>
                           <td>

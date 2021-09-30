@@ -65,7 +65,7 @@
                         <tr onclick="">
                           <td>
                           <?php
-                            echo $i;
+                            echo $result['sanpham_id'];
                             ?>
                           </td>
                           <td>

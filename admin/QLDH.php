@@ -56,7 +56,7 @@
                         <tr>
                         <td>
                             <?php
-                            echo $i;
+                            echo $result['donhang_id'];
                             ?>
                           </td>
                           

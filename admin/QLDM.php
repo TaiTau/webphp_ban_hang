@@ -107,7 +107,7 @@
                 </div>
                 <div class="card-body">
                   <div class="table-responsive">
-                    <form action="qlth.php" method="post">
+                    <form action="QLDM.php" method="post">
                     <table class="table">
                       <thead class=" text-primary">
                        

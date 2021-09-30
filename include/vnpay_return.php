@@ -95,19 +95,18 @@
                                 $code_bank = $_GET['vnp_BankCode'];
                                 $time = $_GET['vnp_PayDate'];
                                 $date_time = substr($time, 0, 4) . '-' . substr($time, 4, 2) . '-' . substr($time, 6, 2) . ' ' . substr($time, 8, 2) . ' ' . substr($time, 10, 2) . ' ' . substr($time, 12, 2);
-                                include("../code/modules/kndatabase.php");
-                                $taikhoan = $_SESSION['tk'];
+                                include_once("../db/connect.php");
                                 $sql = "SELECT * FROM payments WHERE order_id = '$order_id'";
-                                $query = mysqli_query($conn, $sql);
+                                $query = mysqli_query($con, $sql);
                                 $row = mysqli_num_rows($query);
                                 
                                 if ($row > 0) {
                                     $sql = "UPDATE payments SET order_id = '$order_id', money = '$money', note = '$note', vnp_response_code = '$vnp_response_code', code_vnpay = '$code_vnpay', code_bank = '$code_bank' WHERE order_id = '$order_id'";
                                    
-                                    mysqli_query($conn, $sql);
+                                    mysqli_query($con, $sql);
                                 } else {
-                                    $sql = "INSERT INTO payments(order_id, thanh_vien, money, note, vnp_response_code, code_vnpay, code_bank, time) VALUES ('$order_id', '$taikhoan', '$money', '$note', '$vnp_response_code', '$code_vnpay', '$code_bank','$date_time')";
-                                    mysqli_query($conn, $sql);
+                                    $sql = "INSERT INTO payments(order_id,  money, note, vnp_response_code, code_vnpay, code_bank, time) VALUES ('$order_id',  '$money', '$note', '$vnp_response_code', '$code_vnpay', '$code_bank','$date_time')";
+                                    mysqli_query($con, $sql);
                                 }
                                 
                                 echo "GD Thanh cong";
@@ -121,7 +120,7 @@
 
                     </label>
                     <br>
-                    <a href="../code/hocvien_thanhtoan.php">
+                    <a href="../index.php?quanly=giohang">
                         <button>Quay lại</button>
                     </a>
                 </div> 

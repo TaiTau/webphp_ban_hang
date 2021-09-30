@@ -1,6 +1,7 @@
 <?php
   include '../include/header_admin.php';
   include '../include/sidebar_admin.php';
+  include '../classes/khadd.php';
 ?>
 <?php
 
@@ -13,20 +14,67 @@
 	 	session_destroy();
 	 	header('Location: login.php');
 	 }
+   $cus = new khadd();
 ?>
       <!-- End Navbar -->
       <div class="content">
         <div class="container-fluid">
           <div class="row">
+            
+          <?php
+              class order
+              {
+                private $fm;
+                private $db;
+            
+                public function __construct()
+                {
+                    $this->db = new Database();
+                    $this->fm = new Format();
+                }
+          public function show_order()
+      
+          {
+              $squery = "SELECT * FROM tbl_donhang order by donhang_id asc" ;
+              $result = $this ->db->select($squery);
+              return $result;
+          }}
+          $order = new order();
+                          $show_cus = $cus->show_cust();
+                          if(isset($show_cus))
+                          {
+                            $i = 0;
+                            
+                                while($result = $show_cus->fetch_assoc()){
+                                  $i++;
+                                  
+                                
+                                }
+                              }
+                              $show_order = $order->show_order();
+                          if(isset($show_order))
+                          {
+                            $dh=0;
+                            $tong=0;
+                            $sp=0;
+                                while($result = $show_order->fetch_assoc())
+                                {
+                                  $dh++;
+                                      $tong += $result['tongtien'];
+                                  $sp += $result['soluong'];
+                                }
+                          }     
+                        ?>
+                        
             <div class="col-lg-3 col-md-6 col-sm-6">
               <div class="card card-stats">
                 <div class="card-header card-header-warning card-header-icon">
                   <div class="card-icon">
-                    <i class="material-icons">content_copy</i>
+                    <i class="material-icons">account_circle</i>
                   </div>
-                  <p class="card-category">Khách hàng mới</p>
-                  <h3 class="card-title">49/50
-                    <small>GB</small>
+                  <p class="card-category">Số lượng khách hàng </p>
+                  <h3 class="card-title"><?php echo $i ;?>
+                   <!-- <small>GB</small>-->
                   </h3>
                 </div>
                 <div class="card-footer">
@@ -37,14 +85,15 @@
                 </div>
               </div>
             </div>
+            
             <div class="col-lg-3 col-md-6 col-sm-6">
               <div class="card card-stats">
                 <div class="card-header card-header-success card-header-icon">
                   <div class="card-icon">
-                    <i class="material-icons">store</i>
+                    <i class="material-icons">attach_money</i>
                   </div>
-                  <p class="card-category">Doanh thu</p>
-                  <h3 class="card-title">$34,245</h3>
+                  <p class="card-category">Tổng doanh thu</p>
+                  <h3 class="card-title"><?php echo number_format($tong).'₫'; ?></h3>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
@@ -57,10 +106,10 @@
               <div class="card card-stats">
                 <div class="card-header card-header-danger card-header-icon">
                   <div class="card-icon">
-                    <i class="material-icons">info_outline</i>
+                    <i class="material-icons">redeem</i>
                   </div>
-                  <p class="card-category">Sản phẩm mới</p>
-                  <h3 class="card-title">75</h3>
+                  <p class="card-category">Sản phẩm đã bán</p>
+                  <h3 class="card-title"><?php echo $sp ;?></h3>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
@@ -73,10 +122,10 @@
               <div class="card card-stats">
                 <div class="card-header card-header-info card-header-icon">
                   <div class="card-icon">
-                    <i class="fa fa-twitter"></i>
+                    <i class="material-icons">description</i>
                   </div>
                   <p class="card-category">Đơn hàng</p>
-                  <h3 class="card-title">+245</h3>
+                  <h3 class="card-title">+<?php echo $dh ;?></h3>
                 </div>
                 <div class="card-footer">
                   <div class="stats">

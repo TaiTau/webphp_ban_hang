@@ -8,10 +8,10 @@
             <div class = "product-items">
                 <!-- single product -->
                 <?php
-                $sql_product = mysqli_query($con,'SELECT * FROM tbl_sanpham ORDER BY category_id DESC');
+                $sql_product = mysqli_query($con,'SELECT * FROM tbl_sanpham WHERE sanpham_id>"43" AND sanpham_id<"52"');
                     while($row_sanpham = mysqli_fetch_array($sql_product)){
                 ?>
-                <div class = "product">
+                <div style="box-shadow: 5px 5px 15px rgb(0 176 165);" class = "product">
                     <div class = "product-content">
                         <div class = "product-img">
                             <img src = "uploads/<?php echo $row_sanpham['sanpham_image'] ?>" alt = "product image">
@@ -44,9 +44,9 @@
         <div class = "containerhome">
             <h1 class = "lg-title">Chuyên trang thương hiệu</h1>
             <ul style="display: flex; justify-content: center;">
-                <li style="padding:20px;"><img src="images/thuonghieuss.png" alt=""></li>
-                <li style="padding:20px;"><img src="images/thuonghieuip.png" alt=""></li>
-                <li style="padding:20px;"><img src="images/thuonghieulnv.png" alt=""></li>
+                <li style="padding:20px; box-shadow: 5px 5px 15px rgb(0 176 165);"><img src="images/thuonghieuss.png" alt=""></li>
+                <li style="padding:20px; box-shadow: 5px 5px 15px rgb(0 176 165);"><img src="images/thuonghieuip.png" alt=""></li>
+                <li style="padding:20px; box-shadow: 5px 5px 15px rgb(0 176 165);"><img src="images/thuonghieulnv.png" alt=""></li>
             </ul>
         </div>
     </div>       

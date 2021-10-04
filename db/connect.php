@@ -1,5 +1,5 @@
 <?php
-$con = mysqli_connect("localhost","root","","webnangcao");
+$con = mysqli_connect("mysql5031.site4now.net","a7a78a_longrua","spsonglinhtk123","db_a7a78a_longrua");
 
 // Check connection
 if (mysqli_connect_errno()) {
